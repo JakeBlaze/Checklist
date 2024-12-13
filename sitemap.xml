@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home page URL -->
+  <url>
+    <loc>https://jakeblaze.github.io/Checklist/</loc>
+    <lastmod>2024-12-13</lastmod> <!-- Last modified date -->
+    <priority>1.0</priority> <!-- Priority of the page -->
+  </url>
+
+  <!-- Get Checklist page URL -->
+  <url>
+    <loc>https://jakeblaze.github.io/Checklist/get_checklist.html</loc>
+    <lastmod>2024-12-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Add more pages if you have other pages in the future -->
+  <!-- Example: -->
+  <!-- <url> -->
+  <!--   <loc>https://jakeblaze.github.io/Checklist/another-page.html</loc> -->
+  <!--   <lastmod>2024-12-13</lastmod> -->
+  <!--   <priority>0.6</priority> -->
+  <!-- </url> -->
+</urlset>
