@@ -42,43 +42,32 @@
     }
   </style>
   <script type="text/javascript">
-    async function downloadAndRedirect() {
-      const fileURL = "https://raw.githubusercontent.com/JakeBlaze/Checklist/761a3f0a70c9d3dcb3dcfa3853f7521bb5f0b7cb/Community%20Launch%20checklist.pdf"; // Raw file URL
-      const redirectURL = "https://shorturl.at/SU97O"; // Target redirect URL
+  async function downloadAndRedirect() {
+    const button = document.querySelector(".btn"); // Button element
+    const fileURL = "https://raw.githubusercontent.com/JakeBlaze/Checklist/9f19d737cb5b55ff3709afa4bfcb50378048e444/skool_community_checklist.pdf"; // Dropbox direct download link
+    const redirectURL = "https://shorturl.at/SU97O"; // Target redirect URL
 
-      try {
-        // Fetch the file
-        const response = await fetch(fileURL);
-        if (!response.ok) {
-          throw new Error("Failed to fetch the file");
-        }
+    try {
+        // Show loading animation
+        button.classList.add("loading");
 
-        // Create a blob from the response
-        const blob = await response.blob();
-
-        // Create a downloadable object URL
-        const fileLink = document.createElement("a");
-        const objectURL = URL.createObjectURL(blob);
-        fileLink.href = objectURL;
-        fileLink.download = "Community Launch checklist.pdf"; // Specify file name
-        document.body.appendChild(fileLink);
-        fileLink.click();
-
-        // Cleanup the object URL
-        URL.revokeObjectURL(objectURL);
-        document.body.removeChild(fileLink);
-
-        // Redirect after 3 seconds
+        // Open the file URL in a new tab to trigger the download
+        const downloadWindow = window.open(fileURL, '_blank');
+        
+        // Wait for a brief moment to ensure the file starts downloading
         setTimeout(() => {
-          window.location.href = redirectURL;
-        }, 3000);
-
-      } catch (error) {
+            // Redirect to the target URL
+            window.location.href = redirectURL;
+        }, 300); // Adjust time as needed
+    } catch (error) {
         console.error("Error downloading the file:", error);
         alert("Failed to download the file. Please try again.");
-      }
+    } finally {
+        // Remove loading animation
+        button.classList.remove("loading");
     }
-  </script>
+}
+</script>
 </head>
 <body>
   <h1>DOWNLOAD THE SKOOL COMMUNITY LAUNCH CHECKLIST</h1>
